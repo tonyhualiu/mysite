@@ -2,8 +2,8 @@ from app import app
 import bottle
 from bottle import static_file
 
-basePath = './app/static/theme/'
-name = 'tony'
+BASE_PATH = './app/static/theme/'
+MY_NAME = 'tony'
 bottle.TEMPLATE_PATH.insert(0, './app/templates/')
 static_file = bottle.static_file
 template = bottle.template
@@ -14,28 +14,27 @@ def hello():
 
 
 ##### Static Routes #####
-@app.route('/<filename:re:.*\.html>')
-def html(filename):
-    return static_file(filename, root = basePath)
-@app.route('/<filename:re:.*\.js>')
-def javascripts(filename):
-    return static_file(filename, root= basePath)
+@app.route('/<fileName:re:.*\.html>')
+def html(fileName):
+    return static_file(fileName, root = BASE_PATH)
+@app.route('/<fileName:re:.*\.js>')
+def javascripts(fileName):
+    return static_file(fileName, root= BASE_PATH)
 
-@app.route('/<filename:re:.*\.css>')
-def stylesheets(filename):
-    return static_file(filename, root= basePath)
+@app.route('/<fileName:re:.*\.css>')
+def stylesheets(fileName):
+    return static_file(fileName, root= BASE_PATH)
 
-@app.route('/<filename:re:.*\.(jpg|png|gif|ico)>')
-def images(filename):
-    return static_file(filename, root= basePath)
+@app.route('/<fileName:re:.*\.(jpg|png|gif|ico)>')
+def images(fileName):
+    return static_file(fileName, root= BASE_PATH)
 
-@app.route('/<filename:re:.*\.(eot|ttf|woff|svg)>')
-def fonts(filename):
-    return static_file(filename, root= basePath)
+@app.route('/<fileName:re:.*\.(eot|ttf|woff|svg)>')
+def fonts(fileName):
+    return static_file(fileName, root= BASE_PATH)
 
 @app.route('/')
 @app.route('/index')
 def index():
-    print bottle.TEMPLATE_PATH
-    return template('index.tpl', name = name)
+    return template('index.tpl', name = MY_NAME)
 
