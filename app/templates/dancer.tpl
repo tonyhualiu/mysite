@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
 
-    <title>{{ name.upper() }} - Dancer </title>
+    <title>{{ name.upper() }} - ARTIST </title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -44,16 +44,18 @@
 				<p>Show your work here. Dribbble shots from the awesome designer <a href="http://dribbble.com/wanderingbert">David Creighton-Pester</a>.</p>
 			</div>
 		</div>
-		
+		% i = 0
 		% for video in videos:
-	    <div class="row mt centered"> 
-			<!-- <div class="col-lg-4"> -->
-				<!-- div class="embed-responsive embed-responsive-4by3"><iframe src="{{video['url']}}" frameborder="0" allowfullscreen></iframe -->
-				<!-- /div -->
+	    % if i % 4 == 0:
+		<div class="row mt centered">
+		% end 
+			<div class="col-lg-4">
 				<iframe class="embed-responsive embed-responsive-16by9" src="{{video['url']}}" frameborder="0" allowfullscreen></iframe>
 				<p>{{video['description']}}</p>
-			<!-- </div> --> 
+			</div>
+		% if i % 4 == 0:
 		 </div>
+		% end
 		% end
 	</div><!-- /container -->
 	

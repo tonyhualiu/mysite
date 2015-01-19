@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
 
-    <title>{{ name.upper() }} - Dancer </title>
+    <title>{{ name.upper() }} - DEVELOPER</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -31,7 +31,7 @@
 
   <body>
 
-    <!-- +++++ Header +++++ -->
+    <!-- Static navbar -->
 	% include('header.tpl')	
 	
 	<!-- +++++ Projects Section +++++ -->
@@ -39,7 +39,7 @@
 	<div class="container pt">
 		<div class="row mt">
 			<div class="col-lg-6 col-lg-offset-3 centered">
-				<h3>MY PERFORMANCE</h3>
+				<h3>MY WORK</h3>
 				<hr>
 				<p>Show your work here. Dribbble shots from the awesome designer <a href="http://dribbble.com/wanderingbert">David Creighton-Pester</a>.</p>
 			</div>

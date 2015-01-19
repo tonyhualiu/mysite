@@ -12,10 +12,8 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="developer">Developer</a></li>
-            <li><a href="dancer">Dancer</a></li>
-            <li><a href="guitar">Guitarist</a></li>
+            <li><a href="artist">Artist</a></li>
 			<li><a href="blog">Blogger</a></li>
-            <li><a href="contact">Contact</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
