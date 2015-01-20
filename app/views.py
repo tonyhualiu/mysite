@@ -1,6 +1,6 @@
 from app import app
-import bottle
-from bottle import static_file, template
+import bottle, json
+from bottle import static_file, template, request
 from model import Session, Test
 
 BASE_PATH = './app/static/theme/'
@@ -58,3 +58,13 @@ def developer():
 @app.route('/blog')
 def blog():
     return template('blog.tpl', name = MY_NAME)
+
+##### REST API #####
+@app.route('/admin', method = ['POST'])
+def admin():
+    __username = 'tony'
+    __password = 'baiyang600801'
+    token = request.json
+    if token['id'] == __username and token['password'] == __password:
+        return json.dumps({'login': True})
+    return json.dumps({'login': False})
