@@ -65,3 +65,14 @@
         }
     });
 })(jQuery);
+
+// control the action when hovering over the profile picture
+//$('#profile').hover(
+//		function(){
+//			
+//		},
+//		function(){
+//		
+//		}
+		
+//)

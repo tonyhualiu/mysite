@@ -1,5 +1,37 @@
 .navbar-inverse{
-		background-color: #6f5499;
-			border-color: #16a085;
+	background-color: #6f5499;
+	border-color: #6f5499;
 }
 
+#dialogoverlay{
+	display: none;
+	opacity: .8;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background: #FFF;
+	width: 100%;
+	z-index: 1001;
+}
+
+#dialogbox{
+	display: none;
+	position: fixed;
+	background: #000;
+	border-radius:7px; 
+	width:550px;
+	z-index: 1001;
+}
+
+#dialogbox > div{ background:#FFF; margin:8px; }
+#dialogbox > div > #dialogboxhead{ background: #6f5499; font-size:19px; padding:10px; color:#CCC; }
+#dialogbox > div > #dialogboxbody{ background:#FFF; padding:20px; color:#FFF; }
+#dialogbox > div > #dialogboxfoot{ background: #555; padding:10px; text-align:right; }
+
+#admin-icon{
+	width: 30px;
+	height: 30px;
+	margin-right: 20px;
+	top: 8px;
+	color: #ccc;
+}

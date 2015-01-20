@@ -20,6 +20,7 @@
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="assets/js/hover.zoom.js"></script>
     <script src="assets/js/hover.zoom.conf.js"></script>
+	<script src="assets/js/myAlertBox.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -29,7 +30,24 @@
   </head>
 
   <body>
-  <!-- +++++ header +++++-->
+  <!-- +++++ alert box+++++ -->
+  <div id="dialogoverlay"></div>
+  <div id="dialogbox">
+	<div>
+		<div id="dialogboxhead">
+			<span id="admin-icon" class="glyphicon glyphicon-user" aria-hidden="true"></span>Go To Admin Page
+		</div>
+		<div id="dialogboxbody">
+			<div class="input-group">
+				<input type="text" class="form-control" placeholder="username">
+				<input type="password" class="form-control" placeholder="password">
+			</div>
+		</div>
+		<div id="dialogboxfoot"></div>
+	</div>
+  </div>  
+
+  <!-- +++++ header +++++ -->
   %  include('header.tpl')
 
 	<!-- +++++ Welcome Section +++++ -->
@@ -37,7 +55,7 @@
 	    <div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 centered">
-					<img src="assets/img/user.png" href="/admin" alt="Tony">
+					<img id="profile" onmouseover="this.src='assets/img/user_hover.png'" onmouseout="this.src='assets/img/user.png'" src="assets/img/user.png" onclick="myAlertBox.render()" alt="Tony">
 					<h1>Hi, I am {{ name.title() }}!</h1>
 					<p>Hello everybody. I'm Tony, a free handsome bootstrap theme coded by BlackTie.co. A really simple theme for those wanting to showcase their work with a cute & clean style.</p>
 					<p>Please, consider to register to <a href="http://eepurl.com/IcgkX">our newsletter</a> to be updated with our latest themes and freebies. Like always, you can use this theme in any project freely. Share it with your friends.</p>
