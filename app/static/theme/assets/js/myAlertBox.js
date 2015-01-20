@@ -41,6 +41,9 @@ function CustomAlert(){
 		this.cancel = function(){
 			document.getElementById('dialogbox').style.display = "none";
 			document.getElementById('dialogoverlay').style.display = "none";
+			document.getElementById('username').value = "";
+			document.getElementById('password').value = "";
+			document.getElementById('login-fail').style.display = "none";
 	
 		}
 }
