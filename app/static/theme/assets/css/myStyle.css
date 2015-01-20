@@ -3,6 +3,8 @@
 	border-color: #6f5499;
 }
 
+/* login dialog box */
+
 #dialogoverlay{
 	display: none;
 	opacity: .8;
@@ -27,6 +29,18 @@
 #dialogbox > div > #dialogboxhead{ background: #6f5499; font-size:19px; padding:10px; color:#CCC; }
 #dialogbox > div > #dialogboxbody{ background:#FFF; padding:20px; color:#FFF; }
 #dialogbox > div > #dialogboxfoot{ background: #555; padding:10px; text-align:right; }
+#dialogbox > div > #dialogboxbody > .alert{
+	visibility: hidden;
+    padding-top: 5px;
+	padding-right: 5px;
+	padding-left: 5px;
+	padding-bottom: 5px;
+	margin-top: 5px;
+	margin-bottom: 0px;
+}
+#dialogbox > div > #dialogboxfoot > .btn{
+	margin-right: 5px;
+}
 
 #admin-icon{
 	width: 30px;

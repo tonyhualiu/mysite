@@ -42,6 +42,8 @@
 				<input type="text" class="form-control" placeholder="username">
 				<input type="password" class="form-control" placeholder="password">
 			</div>
+			<div class="alert alert-warning" role="alert">Seems like you are not Tony? O_O</div>
+
 		</div>
 		<div id="dialogboxfoot"></div>
 	</div>

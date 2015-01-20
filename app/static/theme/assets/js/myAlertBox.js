@@ -12,8 +12,10 @@ function CustomAlert(){
 			dialogbox.style.left = (winW/2) - (550 * .5)+"px";
 			dialogbox.style.top = "200px";
 			$("#dialogbox").fadeIn(300)
-			document.getElementById('dialogboxfoot').innerHTML = '<button onclick="myAlertBox.ok()">submit</button>'+
-																'<button onclick="myAlertBox.cancel()">cancel</button>';
+			document.getElementById('dialogboxfoot').innerHTML = '<button type="button" onclick="myAlertBox.ok()"'+
+																'class="btn btn-default btn-sm" >submit</button>'+
+																'<button type="button" class="btn btn-default btn-sm"'+
+															   'onclick="myAlertBox.cancel()" >cancel</button>';
 		}
 		this.ok = function(){
 		
