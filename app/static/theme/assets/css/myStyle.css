@@ -30,7 +30,7 @@
 #dialogbox > div > #dialogboxbody{ background:#FFF; padding:20px; color:#FFF; }
 #dialogbox > div > #dialogboxfoot{ background: #555; padding:10px; text-align:right; }
 #dialogbox > div > #dialogboxbody > .alert{
-	visibility: hidden;
+	display: none;
     padding-top: 5px;
 	padding-right: 5px;
 	padding-left: 5px;

@@ -18,7 +18,25 @@ function CustomAlert(){
 															   'onclick="myAlertBox.cancel()" >cancel</button>';
 		}
 		this.ok = function(){
-		
+			url = '/admin';
+			username = document.getElementById('username').value;
+			password = document.getElementById('password').value;
+			settings = {
+				type:'POST',
+				contentType: 'application/json',
+				dataType:'json',
+				data:JSON.stringify({'username':username, 'password':password}), 
+				success: function(response){
+					if(response['login'] == false){
+						$("#login-fail").fadeIn(400);
+					}
+					else{
+					
+					}
+				}
+			};
+
+			jQuery.ajax(url, settings);	
 		}
 		this.cancel = function(){
 			document.getElementById('dialogbox').style.display = "none";

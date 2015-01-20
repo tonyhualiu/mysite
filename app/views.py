@@ -64,7 +64,8 @@ def blog():
 def admin():
     __username = 'tony'
     __password = 'baiyang600801'
+    print request
     token = request.json
-    if token['id'] == __username and token['password'] == __password:
+    if token['username'] == __username and token['password'] == __password:
         return json.dumps({'login': True})
     return json.dumps({'login': False})
