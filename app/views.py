@@ -20,7 +20,6 @@ def dbTest():
 #@app.route('/<fileName:re:.*\.html>')
 #def html(fileName):
 #return static_file(fileName, root = BASE_PATH)
-
 @app.route('/<fileName:re:.*\.js>')
 def javascripts(fileName):
     return static_file(fileName, root= BASE_PATH)
@@ -32,6 +31,7 @@ def stylesheets(fileName):
 @app.route('/<fileName:re:.*\.(jpg|png|gif|ico)>')
 def images(fileName):
     return static_file(fileName, root= BASE_PATH)
+
 
 @app.route('/<fileName:re:.*\.(eot|ttf|woff|svg)>')
 def fonts(fileName):
@@ -58,6 +58,21 @@ def developer():
 @app.route('/blog')
 def blog():
     return template('blog.tpl', name = MY_NAME)
+
+##### Admin #####
+@app.route('/admin/home')
+def adminHome():
+    pass
+
+@app.route('/admin/artist')
+def adminArtist():
+    pass
+@app.route('/admin/developer')
+def adminDeveloper():
+    pass
+@app.route('admin/blog')
+def adminBlogger():
+    pass
 
 ##### REST API #####
 @app.route('/admin', method = ['POST'])
