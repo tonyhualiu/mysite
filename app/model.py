@@ -14,8 +14,26 @@ __url = '{}://{}:{}@{}:{}/{}'.format(__db, __user, __password,
 
 __BASE = declarative_base()
 engine = create_engine(__url)
+conn = engine.connect()
+
 Session = sessionmaker()
 Session.configure(bind = engine)
+
+class Project(__BASE):
+    __tablename__ = 'Projects'
+
+    id = Column('project_id', Integer, primary_key = True)
+    name = Column('project_name', String)
+    tag = Column('project_tag', String)
+    time = Column('time', DateTime)
+    imgURL = Column('im_url', String)
+    content = Column('content', String)
+
+    def __repr__(self):
+        return '<Project(id = "%s", name = "%s")>' % (str(self.id), self.name)
+
+# Test class to test the functionalities of
+# database connection
 class Test(__BASE):
     __tablename__ = 'Test'
 
