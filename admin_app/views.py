@@ -12,6 +12,7 @@ bottle.TEMPLATE_PATH.insert(0, './admin_app/templates/')
 @admin_app.route('/home')
 def home():
     return template('admin_home.tpl')
+
 @admin_app.route('/')
 def index():
     redirect('./home')
@@ -19,6 +20,7 @@ def index():
 @admin_app.route('/projects/new')
 def createProject():
     return template('add_project.tpl')
+
 ##### REST API #####
 @admin_app.route('/projects', method = ['GET','POST', 'PUT','DELETE'])
 def projects_api():
@@ -27,15 +29,23 @@ def projects_api():
         #return template()
         pass
     if request.method == 'POST':
-        project = request.json
+        '''project = request.json
         ins = projects.insert().values(project_id = None,
                                         project_name = project['name'],
                                         project_tag = project['tag'],
                                         project_time = None,
                                         img_url = project['img'],
                                         content = project['content'])
-        conn.execute(ins)
-
+        conn.execute(ins)'''
+        name = request.forms.get('name')
+        tag = request.forms.get('tag')
+        time = request.forms.get('date')
+        content = request.forms.get('content')
+        upload = request.files.get('img')
+        
+        savePath = './app/static/uploads/{}-{}'.format(name, upload.filename)
+        upload.save(savePath)
+        redirect('./projects')
 
 ##### Static Routes #####
 @admin_app.route('/<fileName:re:.*\.html>')
