@@ -55,5 +55,7 @@ target/
 
 # Virtual environment
 venv/
+# upload images
+app/static/uploads/
 # Module file
 *.pyc

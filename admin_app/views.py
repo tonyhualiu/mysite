@@ -29,22 +29,28 @@ def projects_api():
         #return template()
         pass
     if request.method == 'POST':
-        '''project = request.json
-        ins = projects.insert().values(project_id = None,
-                                        project_name = project['name'],
-                                        project_tag = project['tag'],
-                                        project_time = None,
-                                        img_url = project['img'],
-                                        content = project['content'])
-        conn.execute(ins)'''
         name = request.forms.get('name')
         tag = request.forms.get('tag')
         time = request.forms.get('date')
         content = request.forms.get('content')
         upload = request.files.get('img')
         
+        #time conversion
+        from datetime import datetime
+        date = datetime.strptime(time, '%m/%d/%Y')
+
+        #img upload
         savePath = './app/static/uploads/{}-{}'.format(name, upload.filename)
         upload.save(savePath)
+
+        ins = projects.insert().values(project_id = None,
+                                        project_name = name,
+                                        project_tag = tag,
+                                        project_time = date,
+                                        img_url = savePath,
+                                        content = content)
+        conn.execute(ins)
+
         redirect('./projects')
 
 ##### Static Routes #####
