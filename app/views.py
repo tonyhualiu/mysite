@@ -59,23 +59,8 @@ def developer():
 def blog():
     return template('blog.tpl', name = MY_NAME)
 
-##### Admin #####
-@app.route('/admin/home')
-def adminHome():
-    pass
-
-@app.route('/admin/artist')
-def adminArtist():
-    pass
-@app.route('/admin/developer')
-def adminDeveloper():
-    pass
-@app.route('admin/blog')
-def adminBlogger():
-    pass
-
 ##### REST API #####
-@app.route('/admin', method = ['POST'])
+@app.route('/auth', method = ['POST'])
 def admin():
     __username = 'tony'
     __password = 'baiyang600801'

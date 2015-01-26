@@ -2,7 +2,7 @@
 
 function CustomAlert(){
 		this.ok = function(){
-			url = '/admin';
+			url = '/auth';
 			username = document.getElementById('username').value;
 			password = document.getElementById('password').value;
 			settings = {
