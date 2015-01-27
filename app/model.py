@@ -25,12 +25,14 @@ class Project(__BASE):
     id = Column('project_id', Integer, primary_key = True)
     name = Column('project_name', String)
     tag = Column('project_tag', String)
-    time = Column('time', DateTime)
-    imgURL = Column('im_url', String)
+    time = Column('project_time', DateTime)
+    imgURL = Column('img_url', String)
     content = Column('content', String)
 
     def __repr__(self):
-        return '<Project(id = "%s", name = "%s")>' % (str(self.id), self.name)
+		t = self.time.strftime('%Y/%m/%d')
+		return '{id:"%s",name:"%s",tag="%s",time="%s",img_url="%s",content="%s"}' \
+				% (str(self.id), self.name, self.tag, t, self.imgURL, self.content)
 
 # Test class to test the functionalities of
 # database connection

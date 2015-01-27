@@ -1,8 +1,10 @@
 import bottle
-from bottle import route, template, static_file, redirect, request
+from bottle import route, template, static_file, redirect, request, response
 from admin_app import admin_app
-from app.model import conn
+from app.model import Session, engine, Project
 from model import projects
+from datetime import datetime
+
 
 BASE_PATH = './admin_app/static/'
 MY_NAME = 'tony'
@@ -25,9 +27,9 @@ def createProject():
 @admin_app.route('/projects', method = ['GET','POST', 'PUT','DELETE'])
 def projects_api():
     if request.method == 'GET':
-        #projects = getProject()
-        #return template()
-        pass
+        session = Session()
+        response.set_header('Content-Type', 'Application/json')
+        return str([str(p) for p in session.query(Project)])
     if request.method == 'POST':
         name = request.forms.get('name')
         tag = request.forms.get('tag')
@@ -36,7 +38,6 @@ def projects_api():
         upload = request.files.get('img')
         
         #time conversion
-        from datetime import datetime
         date = datetime.strptime(time, '%m/%d/%Y')
 
         #img upload
