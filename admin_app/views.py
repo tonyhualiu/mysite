@@ -43,12 +43,13 @@ def projects_api():
         #img upload
         savePath = './app/static/uploads/{}-{}'.format(name, upload.filename)
         upload.save(savePath)
+        pathInDB = 'uploads/{}'.format(upload.filename)
 
         ins = projects.insert().values(project_id = None,
                                         project_name = name,
                                         project_tag = tag,
                                         project_time = date,
-                                        img_url = savePath,
+                                        img_url = pathInDB,
                                         content = content)
         conn.execute(ins)
 

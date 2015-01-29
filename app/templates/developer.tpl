@@ -44,7 +44,6 @@
 				<p>Show your work here. Dribbble shots from the awesome designer <a href="http://dribbble.com/wanderingbert">David Creighton-Pester</a>.</p>
 			</div>
 		</div>
-		
 		% i = 0
 		% for project in projects:
 		%	if i % 3 == 0:
@@ -52,8 +51,11 @@
 		%	end
 			<div class="col-lg-4">
 				<a class="zoom green" href="{{project.id}}"><img class="img-responsive" src="{{project.imgURL}}" alt="" /></a>
-				<p>{{project.title}}</p>
+				<p>{{project.name}}</p>
 			</div>
+		%	if i % 3 == 2 or i == len(projects) - 1:
+			</div>
+		%   end 
 		%   i += 1
 		% end
 	</div><!-- /container -->

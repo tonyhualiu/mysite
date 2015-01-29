@@ -53,9 +53,10 @@
 				<iframe class="embed-responsive embed-responsive-16by9" src="{{video['url']}}" frameborder="0" allowfullscreen></iframe>
 				<p>{{video['description']}}</p>
 			</div>
-		% if i % 4 == 0:
+		% if i % 3 == 0 or i == len(videos) - 1:
 		 </div>
 		% end
+		% i += 1
 		% end
 	</div><!-- /container -->
 	

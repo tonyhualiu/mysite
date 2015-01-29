@@ -1,7 +1,7 @@
 from app import app
 import bottle, json
 from bottle import static_file, template, request
-from model import Session, Test
+from model import Session, Test, Project
 
 BASE_PATH = './app/static/theme/'
 MY_NAME = 'tony'
@@ -30,6 +30,9 @@ def stylesheets(fileName):
 
 @app.route('/<fileName:re:.*\.(jpg|png|gif|ico)>')
 def images(fileName):
+    print fileName
+    if fileName.startswith('uploads'):
+        return static_file(fileName, root = './app/static/')
     return static_file(fileName, root= BASE_PATH)
 
 
@@ -53,7 +56,9 @@ def dancer():
 
 @app.route('/developer')
 def developer():
-    return template('developer.tpl', name = MY_NAME)
+    session = Session()
+    projects = [p for p in session.query(Project)]
+    return template('developer.tpl', name = MY_NAME, projects = projects)
 
 @app.route('/blog')
 def blog():
