@@ -41,7 +41,7 @@
 			<div class="col-lg-6 col-lg-offset-3 centered">
 				<h3>MY PROJECTS</h3>
 				<hr>
-				<p>Show your work here. Dribbble shots from the awesome designer <a href="http://dribbble.com/wanderingbert">David Creighton-Pester</a>.</p>
+				<p>As a developer, I did several interesting projects.</p>
 			</div>
 		</div>
 		% i = 0

@@ -39,9 +39,9 @@
 	<div class="container pt">
 		<div class="row mt">
 			<div class="col-lg-6 col-lg-offset-3 centered">
-				<h3>MY PERFORMANCE</h3>
+				<h3>MY PERFORMANCES</h3>
 				<hr>
-				<p>Show your work here. Dribbble shots from the awesome designer <a href="http://dribbble.com/wanderingbert">David Creighton-Pester</a>.</p>
+				<p>Check out the performances I used to give</p>
 			</div>
 		</div>
 		% i = 0
