@@ -28,7 +28,7 @@ def javascripts(fileName):
 def stylesheets(fileName):
     return static_file(fileName, root= BASE_PATH)
 
-@app.route('/<fileName:re:.*\.(jpg|png|gif|ico)>')
+@app.route('/<fileName:re:.*\.(JPG|jpg|png|gif|ico)>')
 def images(fileName):
     print fileName
     if fileName.startswith('uploads'):
@@ -74,3 +74,9 @@ def admin():
     if token['username'] == __username and token['password'] == __password:
         return json.dumps({'login': True})
     return json.dumps({'login': False})
+
+@app.route('/projects/<ID:int>')
+def showProject(ID):
+    session = Session()
+    project = session.query(Project).filter(Project.id == ID).first()
+    return template('project.tpl', project = project) 

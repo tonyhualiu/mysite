@@ -1,6 +1,11 @@
         $(function() {
         
-        	
+             	
+            $('.purple').hoverZoom({
+				overlayColor: '#6f5499',
+                zoom: 0
+            });
+	
             $('.blue').hoverZoom({
                 overlayColor: '#3498db',
                 zoom: 0

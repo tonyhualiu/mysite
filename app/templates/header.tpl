@@ -7,13 +7,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index">TONY</a>
+          <a class="navbar-brand" href="/index">TONY</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="developer">Developer</a></li>
-            <li><a href="artist">Artist</a></li>
-			<li><a href="blog">Blogger</a></li>
+            <li><a href="/developer">Developer</a></li>
+            <li><a href="/artist">Artist</a></li>
+			<li><a href="/blog">Blogger</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

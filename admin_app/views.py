@@ -1,7 +1,7 @@
 import bottle
 from bottle import route, template, static_file, redirect, request, response
 from admin_app import admin_app
-from app.model import Session, engine, Project
+from app.model import Session, engine, Project, conn
 from model import projects
 from datetime import datetime
 
@@ -42,8 +42,8 @@ def projects_api():
 
         #img upload
         savePath = './app/static/uploads/{}-{}'.format(name, upload.filename)
-        upload.save(savePath)
-        pathInDB = 'uploads/{}'.format(upload.filename)
+        upload.save(savePath, True)
+        pathInDB = 'uploads/{}-{}'.format(name, upload.filename)
 
         ins = projects.insert().values(project_id = None,
                                         project_name = name,

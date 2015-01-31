@@ -8,19 +8,19 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
 
-    <title>{{ name.upper() }} - DEVELOPER</title>
+    <title>STANLEY - Free Bootstrap Theme </title>
 
     <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
 
 
     <!-- Custom styles for this template -->
-    <link href="assets/css/main.css" rel="stylesheet">
-	<link href="assets/css/myStyle.css" rel="stylesheet">
+    <link href="../assets/css/main.css" rel="stylesheet">
+	<link href="../assets/css/myStyle.css" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="assets/js/hover.zoom.js"></script>
-    <script src="assets/js/hover.zoom.conf.js"></script>
+    <script src="../assets/js/hover.zoom.js"></script>
+    <script src="../assets/js/hover.zoom.conf.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -30,43 +30,34 @@
   </head>
 
   <body>
-
-    <!-- Static navbar -->
+    <!-- +++++ Header +++++ -->
 	% include('header.tpl')	
-	
+
 	<!-- +++++ Projects Section +++++ -->
-	
 	<div class="container pt">
 		<div class="row mt">
 			<div class="col-lg-6 col-lg-offset-3 centered">
-				<h3>MY PROJECTS</h3>
+				<h3>{{project.name.upper()}}</h3>
 				<hr>
-				<p>Show your work here. Dribbble shots from the awesome designer <a href="http://dribbble.com/wanderingbert">David Creighton-Pester</a>.</p>
+				<p>{{project.content}}</p>
 			</div>
 		</div>
-		% i = 0
-		% for project in projects:
-		%	if i % 3 == 0:
-				<div class="row mt centered">	
-		%	end
-			<div class="col-lg-4">
-				<a class="zoom purple" href="./projects/{{project.id}}"><img class="img-responsive" src="{{project.imgURL}}" alt="" /></a>
-				<p>{{project.name}}</p>
+		<div class="row mt centered">	
+			<div class="col-lg-8 col-lg-offset-2">
+				<p><img class="img-responsive" src="../{{project.imgURL}}" alt=""></p>
+				<p><bt>Tag: {{project.tag}}</bt> - <bt>Date: {{project.time.strftime('%B, %Y')}}</bt></p>
 			</div>
-		%	if i % 3 == 2 or i == len(projects) - 1:
-			</div>
-		%   end 
-		%   i += 1
-		% end
+		</div><!-- /row -->
 	</div><!-- /container -->
 	
 	
 	<!-- +++++ Footer Section +++++ -->
+	
 	% include('footer.tpl')	
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
   </body>
 </html>
