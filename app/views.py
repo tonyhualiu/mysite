@@ -35,11 +35,13 @@ def images(fileName):
         return static_file(fileName, root = './app/static/')
     return static_file(fileName, root= BASE_PATH)
 
-
 @app.route('/<fileName:re:.*\.(eot|ttf|woff|svg)>')
 def fonts(fileName):
     return static_file(fileName, root= BASE_PATH)
 
+@app.route('/resume')
+def resume():
+    return static_file('resume.pdf', root = './app/static/')
 ##### Customerized Routes #####
 @app.route('/')
 @app.route('/index')
@@ -62,7 +64,8 @@ def developer():
 
 @app.route('/blog')
 def blog():
-    return template('blog.tpl', name = MY_NAME)
+    #return template('blog.tpl', name = MY_NAME)
+    return template('coming_soon.tpl')
 
 ##### REST API #####
 @app.route('/auth', method = ['POST'])

@@ -11,12 +11,17 @@
   <![endif]-->
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+<script type="text/javascript" src="../tinymce/tinymce.min.js"></script>
   <script>
 $(document).ready(
 	function(){
 		/* add jquery calendar */
 		$( "#datepicker" ).datepicker();
-		
+		tinymce.init(
+			{
+				selector: "textarea"
+			}
+		);
 		/* rewrite subimt */
 		/*$( "#create_project" ).submit(
 			function(event){

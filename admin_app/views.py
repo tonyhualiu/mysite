@@ -44,7 +44,7 @@ def projects_api():
         savePath = './app/static/uploads/{}-{}'.format(name, upload.filename)
         upload.save(savePath, True)
         pathInDB = 'uploads/{}-{}'.format(name, upload.filename)
-
+        
         ins = projects.insert().values(project_id = None,
                                         project_name = name,
                                         project_tag = tag,
@@ -58,6 +58,10 @@ def projects_api():
 ##### Static Routes #####
 @admin_app.route('/<fileName:re:.*\.html>')
 def html(fileName):
+    return static_file(fileName, root = BASE_PATH)
+
+@admin_app.route('/<fileName:re:tinymce.*>')
+def tinymce(fileName):
     return static_file(fileName, root = BASE_PATH)
 @admin_app.route('/<fileName:re:plugins.*>')
 def plugins(fileName):

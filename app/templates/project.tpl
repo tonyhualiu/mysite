@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+    <link rel="shortcut icon" href="assets/img/favicon.png">
 
-    <title>STANLEY - Free Bootstrap Theme </title>
+    <title>{{project.name}} </title>
 
     <!-- Bootstrap core CSS -->
     <link href="../assets/css/bootstrap.css" rel="stylesheet">
@@ -39,15 +39,20 @@
 			<div class="col-lg-6 col-lg-offset-3 centered">
 				<h3>{{project.name.upper()}}</h3>
 				<hr>
-				<p>{{project.content}}</p>
+				{{!project.content}}
 			</div>
-		</div>
+		</div> <!-- /row -->
 		<div class="row mt centered">	
-			<div class="col-lg-8 col-lg-offset-2">
-				<p><img class="img-responsive" src="../{{project.imgURL}}" alt=""></p>
+			<div class="col-lg-6 col-lg-offset-3 centered">
+				<img class="img-responsive" src="../{{project.imgURL}}" alt="">
+			</div>
+		</div><!-- /row -->
+		<div class="row mt centered">	
+			<div class="col-lg-6 col-lg-offset-3 centered">
 				<p><bt>Tag: {{project.tag}}</bt> - <bt>Date: {{project.time.strftime('%B, %Y')}}</bt></p>
 			</div>
 		</div><!-- /row -->
+
 	</div><!-- /container -->
 	
 	

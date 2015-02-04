@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+    <link rel="shortcut icon" href="assets/img/favicon.png">
 
     <title>{{name.upper()}} - B_Master </title>
 
@@ -59,7 +59,7 @@
 				<div class="col-lg-8 col-lg-offset-2 centered">
 					<img id="profile" onmouseover="this.src='assets/img/user_hover.png'" onmouseout="this.src='assets/img/user.png'" src="assets/img/user.png" onclick="myAlertBox.render()" alt="Tony">
 					<h1>Hi, I am {{ name.title() }}!</h1>
-					<p>Hello everybody. I'm Tony, a recent graduate from Carnegie Mellon University. I am currently working at <a href="//minted.com">Minted</a> as a Software Engineer.</p>
+					<p>Hello everybody. I'm Tony, a recent graduate from Carnegie Mellon University. I am currently working at <a href="//minted.com">Minted</a> as a Software Engineer. Check out my <a href="resume" target="_blank">Resume</a> if you'd like to!</p>
 					<p>Besides coding, I love dancing, playing the guitar, and writing little essays with agreeable melancholy. Also, I love learning new languages and now I am trying Cantonese.</p>
 				
 				</div><!-- /col-lg-8 -->
