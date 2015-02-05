@@ -1,7 +1,7 @@
 import bottle
 from bottle import route, template, static_file, redirect, request, response
 from admin_app import admin_app
-from app.model import Session, engine, Project, conn
+from app.model import Session, engine, Project
 from model import projects
 from datetime import datetime
 
@@ -51,7 +51,9 @@ def projects_api():
                                         project_time = date,
                                         img_url = pathInDB,
                                         content = content)
+        conn = engine.connect()
         conn.execute(ins)
+        conn.close()
 
         redirect('./projects')
 

@@ -14,7 +14,6 @@ __url = '{}://{}:{}@{}:{}/{}'.format(__db, __user, __password,
 
 __BASE = declarative_base()
 engine = create_engine(__url)
-conn = engine.connect()
 
 Session = sessionmaker()
 Session.configure(bind = engine)
