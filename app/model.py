@@ -1,13 +1,17 @@
 from sqlalchemy import create_engine, Column, Integer, String, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+from ConfigParser import ConfigParser
 
-__db = 'mysql'
-__user = 'root'
-__password = 'baiyang600801'
-__host = 'localhost'
-__port = '3306'
-__dbname = 'mysite'
+config = ConfigParser()
+config.read('app/config.cfg')
+dbSection = 'mysql'
+__db = config.get(dbSection, 'db')
+__user = config.get(dbSection, 'user')
+__password = config.get(dbSection, 'password')
+__host = config.get(dbSection, 'host')
+__port = config.get(dbSection, 'port')
+__dbname = config.get(dbSection, 'dbname')
 
 __url = '{}://{}:{}@{}:{}/{}'.format(__db, __user, __password,
             __host, __port, __dbname)

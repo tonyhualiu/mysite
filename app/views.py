@@ -52,8 +52,9 @@ def index():
 def dancer():
     # when embed video in your website, you have to change the youtube video url
     # from watch?v={id} to embed/{id}
-    video1 = {'url':'https://www.youtube.com/embed/RarwTz3VVak','description':'test'}
-    videos = [video1]
+    video1 = {'url':'https://www.youtube.com/embed/RarwTz3VVak','description':'@UPitts, FRESA'}
+    video2 = {'url': "https://www.youtube.com/embed/S6X0HubLFU4", 'description':'CMU 2014 Spring Festival'}
+    videos = [video1, video2]
     return template('dancer.tpl', name = MY_NAME, videos = videos)
 
 @app.route('/developer')

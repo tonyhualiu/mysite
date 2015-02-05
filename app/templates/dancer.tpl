@@ -46,16 +46,16 @@
 		</div>
 		% i = 0
 		% for video in videos:
-	    % if i % 4 == 0:
+	    %	if i % 4 == 0:
 		<div class="row mt centered">
-		% end 
+		%	end 
 			<div class="col-lg-4">
 				<iframe class="embed-responsive embed-responsive-16by9" src="{{video['url']}}" frameborder="0" allowfullscreen></iframe>
 				<p>{{video['description']}}</p>
 			</div>
-		% if i % 3 == 0 or i == len(videos) - 1:
+		%	if i % 3 == 2 or i == len(videos) - 1:
 		 </div>
-		% end
+		%	end
 		% i += 1
 		% end
 	</div><!-- /container -->
