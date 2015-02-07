@@ -29,7 +29,7 @@ def myAlertBox(path):
 def commingSoon(path):
     return static_file(path, root = BASE_PATH)
 
-@app.route('/<path:re:uploads>')
+@app.route('/<path:re:uploads.*>')
 def uploads(path):
     return static_file(path, root = BASE_PATH)
 
