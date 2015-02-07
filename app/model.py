@@ -13,7 +13,7 @@ __host = config.get(dbSection, 'host')
 __port = config.get(dbSection, 'port')
 __dbname = config.get(dbSection, 'dbname')
 
-__url = '{}://{}:{}@{}:{}/{}'.format(__db, __user, __password,
+__url = '{0}://{1}:{2}@{3}:{4}/{5}'.format(__db, __user, __password,
             __host, __port, __dbname)
 
 __BASE = declarative_base()
