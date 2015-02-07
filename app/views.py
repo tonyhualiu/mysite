@@ -3,7 +3,7 @@ import bottle, json
 from bottle import static_file, template, request
 from model import Session, Test, Project
 
-BASE_PATH = './app/static/theme/'
+BASE_PATH = './app/static/'
 MY_NAME = 'tony'
 bottle.TEMPLATE_PATH.insert(0, './app/templates/')
 
@@ -17,31 +17,30 @@ def dbTest():
     return str(result)
 
 ##### Static Routes #####
-#@app.route('/<fileName:re:.*\.html>')
-#def html(fileName):
-#return static_file(fileName, root = BASE_PATH)
-@app.route('/<fileName:re:.*\.js>')
-def javascripts(fileName):
-    return static_file(fileName, root= BASE_PATH)
+@app.route('/<path:re:theme.*>')
+def mainTheme(path):
+    return static_file(path, root = BASE_PATH)
 
-@app.route('/<fileName:re:.*\.css>')
-def stylesheets(fileName):
-    return static_file(fileName, root= BASE_PATH)
+@app.route('/<path:re:myAlertBox.*>')
+def myAlertBox(path):
+    return static_file(path, root = BASE_PATH)
 
-@app.route('/<fileName:re:.*\.(JPG|jpg|png|gif|ico)>')
-def images(fileName):
-    print fileName
-    if fileName.startswith('uploads'):
-        return static_file(fileName, root = './app/static/')
-    return static_file(fileName, root= BASE_PATH)
+@app.route('/<path:re:tools.*>')
+def commingSoon(path):
+    return static_file(path, root = BASE_PATH)
 
-@app.route('/<fileName:re:.*\.(eot|ttf|woff|svg)>')
-def fonts(fileName):
-    return static_file(fileName, root= BASE_PATH)
+@app.route('/<path:re:uploads>')
+def uploads(path):
+    return static_file(path, root = BASE_PATH)
 
 @app.route('/resume')
 def resume():
-    return static_file('resume.pdf', root = './app/static/')
+    return static_file('resume.pdf', root = BASE_PATH)
+
+@app.route('/favicon.ico')
+def icon():
+    return static_file('favicon.png', root = './app/')
+
 ##### Customerized Routes #####
 @app.route('/')
 @app.route('/index')

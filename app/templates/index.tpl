@@ -11,16 +11,16 @@
     <title>{{name.upper()}} - B_Master </title>
 
     <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="/theme/assets/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="assets/css/main.css" rel="stylesheet">
-	<link href="assets/css/myStyle.css" rel="stylesheet">
+    <link href="/theme/assets/css/main.css" rel="stylesheet">
+	<link href="/theme/assets/css/myStyle.css" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="assets/js/hover.zoom.js"></script>
-    <script src="assets/js/hover.zoom.conf.js"></script>
-	<script src="assets/js/myAlertBox.js"></script>
+    <script src="/theme/assets/js/hover.zoom.js"></script>
+    <script src="/theme/assets/js/hover.zoom.conf.js"></script>
+	<script src="/myAlertBox/js/myAlertBox.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -57,7 +57,7 @@
 	    <div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 centered">
-					<img id="profile" onmouseover="this.src='assets/img/user_hover.png'" onmouseout="this.src='assets/img/user.png'" src="assets/img/user.png" onclick="myAlertBox.render()" alt="Tony">
+					<img id="profile" onmouseover="this.src='/theme/assets/img/user_hover.png'" onmouseout="this.src='/theme/assets/img/user.png'" src="/theme/assets/img/user.png" onclick="myAlertBox.render()" alt="Tony">
 					<h1>Hi, I am {{ name.title() }}!</h1>
 					<p>Hello everybody. I'm Tony, a recent graduate from Carnegie Mellon University. I am currently working at <a href="//minted.com">Minted</a> as a Software Engineer. Check out my <a href="resume" target="_blank">Resume</a> if you'd like to!</p>
 					<p>Besides coding, I love dancing, playing the guitar, and writing little essays with agreeable melancholy. Also, I love learning new languages and now I am trying Cantonese.</p>
@@ -74,6 +74,6 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="/theme/assets/js/bootstrap.min.js"></script>
   </body>
 </html>

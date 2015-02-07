@@ -11,16 +11,16 @@
     <title>{{ name.upper() }} - ARTIST </title>
 
     <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="/theme/assets/css/bootstrap.css" rel="stylesheet">
 
 
     <!-- Custom styles for this template -->
-    <link href="assets/css/main.css" rel="stylesheet">
-	<link href="assets/css/myStyle.css" rel="stylesheet">
+    <link href="/theme/assets/css/main.css" rel="stylesheet">
+	<link href="/theme/assets/css/myStyle.css" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="assets/js/hover.zoom.js"></script>
-    <script src="assets/js/hover.zoom.conf.js"></script>
+    <script src="/theme/assets/js/hover.zoom.js"></script>
+    <script src="/theme/assets/js/hover.zoom.conf.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -67,6 +67,6 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="/theme/assets/js/bootstrap.min.js"></script>
   </body>
 </html>
